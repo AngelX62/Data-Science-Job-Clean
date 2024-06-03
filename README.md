@@ -16,16 +16,20 @@ The dataset used for this project can be retrieved from [here](https://www.kaggl
 
 ## Getting Started
 
-### Prerequisites and Implementations
+### Dependencies
 To run this project, you need to have the following installed:
-- Python
+- Python (> = 3.9)
 - Jupyter Notebook
-- NumPy
-- Pandas
-- MatplotLib
-- Seaborn
-- Plotly
+- NumPy (> = 1.19.5)
+- Pandas (> = 2.2.2)
+- MatplotLib (> = 3.8.2)
+- Seaborn (> = 0.13.2)
+- Plotly (> = 5.22.0)
+
 ### Methods Used
 - Data Cleaning
 - Exploratory Data Analysis
 - Data Visualization
+
+### Installation
+
