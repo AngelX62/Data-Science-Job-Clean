@@ -6,7 +6,7 @@
 - [Project Overview](#project-overview)
 - [Source of Data](#source-of-data)
 - [Getting Started](#getting-started)
-  - [Prerequisites and Implementations](#prerequisites-and-implementations)
+  - [Dependencies](#dependencies)
   - [Methods Used](#Methods-Used)
 ## Project Overview
 The data science job market is rapidly evolving, and understanding past trends is crucial for predicting future demands and preparing for upcoming opportunities. Even though the data is from 2021, this provides a historical benchmark that can help identify similar trends, shifts in the job market, and emerging skills in the present time. 
@@ -18,6 +18,9 @@ The dataset used for this project can be retrieved from [here](https://www.kaggl
 
 ### Dependencies
 To run this project, you need to have the following installed:
+'''bash
+pip install numpy pandas matplotlib seaborn plotly jupyter
+'''
 - Python (> = 3.9)
 - Jupyter Notebook
 - NumPy (> = 1.19.5)
@@ -31,5 +34,6 @@ To run this project, you need to have the following installed:
 - Exploratory Data Analysis
 - Data Visualization
 
-### Installation
+### User Installation
+
 
