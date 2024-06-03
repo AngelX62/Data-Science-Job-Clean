@@ -11,7 +11,6 @@
 ## Getting Started
 
 ### Prerequisites
-
 To run this project, you need to have the following installed:
 - Python
 - Jupyter Notebook
