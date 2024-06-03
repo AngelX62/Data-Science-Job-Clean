@@ -5,5 +5,18 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Source of Data](#source-of-data)
+- [Getting Started](#getting-started)
 ## Project Overview
 
+## Getting Started
+
+### Prerequisites
+
+To run this project, you need to have the following installed:
+- Python
+- Jupyter Notebook
+- NumPy
+- Pandas
+- MatplotLib
+- Seaborn
+- Plotly
