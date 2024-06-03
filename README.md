@@ -18,9 +18,9 @@ The dataset used for this project can be retrieved from [here](https://www.kaggl
 
 ### Dependencies
 To run this project, you need to have the following installed:
-'''bash
-pip install numpy pandas matplotlib seaborn plotly jupyter
-'''
+```bash
+    pip install numpy pandas matplotlib seaborn plotly jupyter
+```
 - Python (> = 3.9)
 - Jupyter Notebook
 - NumPy (> = 1.19.5)
