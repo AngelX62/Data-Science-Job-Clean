@@ -8,6 +8,9 @@
 - [Getting Started](#getting-started)
 ## Project Overview
 
+## Source of Data
+The dataset used for this project can be retrieved from [here](https://www.kaggle.com/datasets/rashikrahmanpritom/data-science-job-posting-on-glassdoor/data)
+
 ## Getting Started
 
 ### Prerequisites
