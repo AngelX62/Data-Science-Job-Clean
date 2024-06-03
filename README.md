@@ -6,7 +6,7 @@
 - [Project Overview](#project-overview)
 - [Source of Data](#source-of-data)
 - [Getting Started](#getting-started)
-- [Prerequisites and Implementations](#prerequisites-and-implementations)
+  - [Prerequisites and Implementations](#prerequisites-and-implementations)
   - [Methods Used](#Methods-Used)
 ## Project Overview
 The data science job market is rapidly evolving, and understanding past trends is crucial for predicting future demands and preparing for upcoming opportunities. Even though the data is from 2021, this provides a historical benchmark that can help identify similar trends, shifts in the job market, and emerging skills in the present time. 
