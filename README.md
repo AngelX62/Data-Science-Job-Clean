@@ -24,7 +24,7 @@ To run this project, you need to have the following installed:
 - MatplotLib
 - Seaborn
 - Plotly
-## Methods Used
+### Methods Used
 - Data Cleaning
 - Exploratory Data Analysis
 - Data Visualization
