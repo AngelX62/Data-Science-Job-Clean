@@ -8,7 +8,7 @@
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
 ## Project Overview
-The data science job market is rapidly evolving, and understanding past trends is crucial for predicting future demands and preparing for upcoming opportunities. 
+The data science job market is rapidly evolving, and understanding past trends is crucial for predicting future demands and preparing for upcoming opportunities. Even though the data is from 2021, this provides a historical benchmark that can help identify similar trends, shifts in the job market, and emerging skills in the present time. 
 ## Source of Data
 The dataset used for this project can be retrieved from [here](https://www.kaggle.com/datasets/rashikrahmanpritom/data-science-job-posting-on-glassdoor/data)
 
