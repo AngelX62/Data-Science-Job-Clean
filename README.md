@@ -8,6 +8,11 @@
 - [Getting Started](#getting-started)
   - [Dependencies and User Installation](#dependencies-and-user-installation)
   - [Methods Used](#Methods-Used)
+- [Plotly Visualizations](#plotly-visualizations)
+  - [Plotly Code #1](#plotly-code-1)
+  - [Plotly Result #1](#plotly-result-1)
+  - [Plotly Code #2](#plotly-code-1)
+  - [Plotly Result #2](#plotly-result-2)
 ## Project Overview
 The data science job market is rapidly evolving, and understanding past trends is crucial for predicting future demands and preparing for upcoming opportunities. Even though the data is from 2021, this provides a historical benchmark that can help identify similar trends, shifts in the job market, and emerging skills in the present time. 
 
@@ -34,4 +39,150 @@ pip install numpy pandas matplotlib seaborn plotly jupyter
 - Exploratory Data Analysis
 - Data Visualization
 
+## Plotly Visualizations 
+These visualizations provide insights into the data science job market, highlighting key skills and their prevalence. 
+
+The actual Plotly graph did not render on Github so I will provide a screenshot of the visualizations. 
+
+### Plotly Code #1
+```python
+# To create subplots with 2 rows and 1 column
+fig = make_subplots(rows=2, cols=1)
+# Get required data for melt function
+data = df[['python', 'excel', 'hadoop', 'spark', 
+             'tableau', 'aws', 'big_data', 'machine_learning']]
+
+# Melt function: Unpivots a DataFrame from a wide format to a long format
+# Converts DataFrame into long DataFrame with two columns: Skill and Presence
+data_melted = data.melt(var_name='Skill', value_name='Presence')
+# Grouping data and resetting index
+prob_data = data_melted.groupby(['Skill', 'Presence']).size().reset_index(name = 'Count')
+# divide the total of Counts by the number of skill req
+prob_data['Probability'] = prob_data['Count'] / len(data)
+conditions = [
+    {'presence': 1, 'prob_color': 'purple', 'count_color': 'red', 'prob_name': 'Probability - yes (1)', 'count_name': 'Count - yes (1)'},
+    {'presence': 0, 'prob_color': 'green', 'count_color': 'blue', 'prob_name': 'Probability - no (0)',  'count_name': 'Count - no (0)'}
+]
+for cond in conditions:
+    # Subplot #1
+    fig.add_trace(
+        go.Bar(x=prob_data.query(f'Presence == {cond["presence"]}')['Skill'], 
+               y=prob_data.query(f'Presence == {cond["presence"]}')['Probability'], 
+               name=cond['prob_name'],
+               marker_color=cond['prob_color']
+        ), 
+        row=1, col=1
+    )
+    
+    fig.add_trace( 
+         go.Bar(x=prob_data.query(f'Presence == {cond["presence"]}')['Skill'], 
+                y=prob_data.query(f'Presence == {cond["presence"]}')['Count'],
+                name=cond['count_name'],
+                marker_color=cond['count_color']
+        ), 
+        row=2, col=1
+    )
+
+fig.update_layout(height=500, 
+                  width=1000)
+
+fig.update_yaxes(title_text='Probability', row=1, col=1)
+fig.update_yaxes(title_text='Count', row=2, col=1)
+
+
+fig.show()
+```
+### Plotly Result #1
+
+
+<img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/3c8428eb-e6ff-4c3a-b5b4-22f4700743a4" alt="istock-1221293664-1-1-1" width="600">
+
+
+### Plotly Code #2
+
+```python
+# To create subplots with 2 rows and 1 column
+fig = make_subplots(rows=2, cols=1)
+# Get required data for melt function
+data = df[['python', 'excel', 'hadoop', 'spark', 
+             'tableau', 'aws', 'big_data', 'machine_learning']]
+
+# Melt function: Unpivots a DataFrame from a wide format to a long format
+# Converts DataFrame into long DataFrame with two columns: Skill and Presence
+data_melted = data.melt(var_name='Skill', value_name='Presence')
+# Grouping data and resetting index
+prob_data = data_melted.groupby(['Skill', 'Presence']).size().reset_index(name = 'Count')
+# divide the total of Counts by the number of skill req
+prob_data['Probability'] = prob_data['Count'] / len(data)
+conditions = [
+    {'presence': 1, 'prob_color': 'purple', 'count_color': 'red', 'prob_name': 'Probability - yes (1)', 'count_name': 'Count - yes (1)'},
+    {'presence': 0, 'prob_color': 'green', 'count_color': 'blue', 'prob_name': 'Probability - no (0)',  'count_name': 'Count - no (0)'}
+]
+for cond in conditions:
+    # Subplot #1
+    fig.add_trace(
+        go.Bar(x=prob_data.query(f'Presence == {cond["presence"]}')['Skill'], 
+               y=prob_data.query(f'Presence == {cond["presence"]}')['Probability'], 
+               name=cond['prob_name'],
+               marker_color=cond['prob_color']
+        ), 
+        row=1, col=1
+    )
+    
+    fig.add_trace( 
+         go.Bar(x=prob_data.query(f'Presence == {cond["presence"]}')['Skill'], 
+                y=prob_data.query(f'Presence == {cond["presence"]}')['Count'],
+                name=cond['count_name'],
+                marker_color=cond['count_color']
+        ), 
+        row=2, col=1
+    )
+
+fig.update_layout(height=500, 
+                  width=1000)
+
+fig.update_yaxes(title_text='Probability', row=1, col=1)
+fig.update_yaxes(title_text='Count', row=2, col=1)
+
+
+fig.show()
+```
+
+### Plotly Result #2
+<img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/f49d6825-75aa-46f4-bef7-921be2be5528" alt="istock-1221293664-1-1-1" width="600">
+
+
+### Plotly Code #3
+```python
+# Take the correlation coefficients between each pair of skills
+correl = df[['python', 'excel', 'hadoop', 'spark', 
+             'tableau', 'aws', 'big_data', 'machine_learning']].corr()
+# Get row and columns of alues of correlation 
+leng = [(i, j) for i in range(len(correl)) for j in range(len(correl))]
+annotations = [
+    # Create layout
+    go.layout.Annotation(
+        x = correl.columns[j],
+        y = correl.columns[i],
+        text=str(round(correl.iloc[i,j], 2)),
+        showarrow=False,
+        font=dict(size=12, color="white")
+    )
+    for i, j in leng
+]
+# Create heatmap with the values
+fig = go.Figure(data=go.Heatmap(
+    z=correl.values,
+    x=correl.columns,
+    y=correl.columns
+))
+# Adjust heatmap
+fig.update_layout(height=500, 
+                  width=1000,
+                 annotations=annotations)
+fig.show()
+```
+
+### Plotly Result #3
+<img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/d8e2bab0-4fc3-446b-856a-bdf7fc753944" width="600">
 
