@@ -9,7 +9,7 @@
   - [Dependencies and User Installation](#dependencies-and-user-installation)
   - [Methods Used](#Methods-Used)
 - [Plotly Visualizations](#plotly-visualizations)
-  - [Plotly Code #1](#plotly-code-##1)
+  - [Plotly Code #1](#plotly-code-1)
   - [Plotly Result #1](#plotly-result-#1)
   - [Plotly Code #2](#plotly-code-#1)
 ## Project Overview
