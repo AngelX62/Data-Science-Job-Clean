@@ -10,8 +10,9 @@
   - [Methods Used](#Methods-Used)
 - [Plotly Visualizations](#plotly-visualizations)
   - [Plotly Code #1](#plotly-code-1)
-  - [Plotly Result #1](#plotly-result-#1)
-  - [Plotly Code #2](#plotly-code-#1)
+  - [Plotly Result #1](#plotly-result-1)
+  - [Plotly Code #2](#plotly-code-1)
+  - [Plotly Result #2](#plotly-result-2)
 ## Project Overview
 The data science job market is rapidly evolving, and understanding past trends is crucial for predicting future demands and preparing for upcoming opportunities. Even though the data is from 2021, this provides a historical benchmark that can help identify similar trends, shifts in the job market, and emerging skills in the present time. 
 
@@ -149,4 +150,6 @@ fig.show()
 
 ### Plotly Result #2
 <img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/f49d6825-75aa-46f4-bef7-921be2be5528" alt="istock-1221293664-1-1-1" width="600">
+
+
 
