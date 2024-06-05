@@ -34,4 +34,5 @@ pip install numpy pandas matplotlib seaborn plotly jupyter
 - Exploratory Data Analysis
 - Data Visualization
 
+## Plotly Visualizations 
 
