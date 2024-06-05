@@ -93,6 +93,8 @@ fig.show()
 <img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/3c8428eb-e6ff-4c3a-b5b4-22f4700743a4" alt="istock-1221293664-1-1-1" width="600">
 
 
+
+
 ```python
 # To create subplots with 2 rows and 1 column
 fig = make_subplots(rows=2, cols=1)
