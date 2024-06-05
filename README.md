@@ -152,4 +152,37 @@ fig.show()
 <img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/f49d6825-75aa-46f4-bef7-921be2be5528" alt="istock-1221293664-1-1-1" width="600">
 
 
+### Plotly Code #3
+```python
+# Take the correlation coefficients between each pair of skills
+correl = df[['python', 'excel', 'hadoop', 'spark', 
+             'tableau', 'aws', 'big_data', 'machine_learning']].corr()
+# Get row and columns of alues of correlation 
+leng = [(i, j) for i in range(len(correl)) for j in range(len(correl))]
+annotations = [
+    # Create layout
+    go.layout.Annotation(
+        x = correl.columns[j],
+        y = correl.columns[i],
+        text=str(round(correl.iloc[i,j], 2)),
+        showarrow=False,
+        font=dict(size=12, color="white")
+    )
+    for i, j in leng
+]
+# Create heatmap with the values
+fig = go.Figure(data=go.Heatmap(
+    z=correl.values,
+    x=correl.columns,
+    y=correl.columns
+))
+# Adjust heatmap
+fig.update_layout(height=500, 
+                  width=1000,
+                 annotations=annotations)
+fig.show()
+```
+
+### Plotly Result #3
+<img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/d8e2bab0-4fc3-446b-856a-bdf7fc753944" width="600">
 
