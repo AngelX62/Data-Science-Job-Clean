@@ -147,6 +147,6 @@ fig.update_yaxes(title_text='Count', row=2, col=1)
 fig.show()
 ```
 
-# Plotly Result #2
+### Plotly Result #2
 <img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/f49d6825-75aa-46f4-bef7-921be2be5528" alt="istock-1221293664-1-1-1" width="600">
 
