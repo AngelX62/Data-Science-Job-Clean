@@ -35,6 +35,9 @@ pip install numpy pandas matplotlib seaborn plotly jupyter
 - Data Visualization
 
 ## Plotly Visualizations 
+These visualizations provide insights into the data science job market, highlighting key skills and their prevalence. 
+
+The actual Plotly graph did not render on Github so I will provide a screenshot of the visualization. 
 ```python
 # To create subplots with 2 rows and 1 column
 fig = make_subplots(rows=2, cols=1)
@@ -82,5 +85,5 @@ fig.update_yaxes(title_text='Count', row=2, col=1)
 
 fig.show()
 ```
-
+Result:
 <img src="https://github.com/AngelX62/DS_Job_Clean/assets/120829581/3c8428eb-e6ff-4c3a-b5b4-22f4700743a4" alt="istock-1221293664-1-1-1" width="600">
