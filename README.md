@@ -35,4 +35,50 @@ pip install numpy pandas matplotlib seaborn plotly jupyter
 - Data Visualization
 
 ## Plotly Visualizations 
+```python
+# To create subplots with 2 rows and 1 column
+fig = make_subplots(rows=2, cols=1)
+# Get required data for melt function
+data = df[['python', 'excel', 'hadoop', 'spark', 
+             'tableau', 'aws', 'big_data', 'machine_learning']]
 
+# Melt function: Unpivots a DataFrame from a wide format to a long format
+# Converts DataFrame into long DataFrame with two columns: Skill and Presence
+data_melted = data.melt(var_name='Skill', value_name='Presence')
+# Grouping data and resetting index
+prob_data = data_melted.groupby(['Skill', 'Presence']).size().reset_index(name = 'Count')
+# divide the total of Counts by the number of skill req
+prob_data['Probability'] = prob_data['Count'] / len(data)
+conditions = [
+    {'presence': 1, 'prob_color': 'purple', 'count_color': 'red', 'prob_name': 'Probability - yes (1)', 'count_name': 'Count - yes (1)'},
+    {'presence': 0, 'prob_color': 'green', 'count_color': 'blue', 'prob_name': 'Probability - no (0)',  'count_name': 'Count - no (0)'}
+]
+for cond in conditions:
+    # Subplot #1
+    fig.add_trace(
+        go.Bar(x=prob_data.query(f'Presence == {cond["presence"]}')['Skill'], 
+               y=prob_data.query(f'Presence == {cond["presence"]}')['Probability'], 
+               name=cond['prob_name'],
+               marker_color=cond['prob_color']
+        ), 
+        row=1, col=1
+    )
+    
+    fig.add_trace( 
+         go.Bar(x=prob_data.query(f'Presence == {cond["presence"]}')['Skill'], 
+                y=prob_data.query(f'Presence == {cond["presence"]}')['Count'],
+                name=cond['count_name'],
+                marker_color=cond['count_color']
+        ), 
+        row=2, col=1
+    )
+
+fig.update_layout(height=500, 
+                  width=1000)
+
+fig.update_yaxes(title_text='Probability', row=1, col=1)
+fig.update_yaxes(title_text='Count', row=2, col=1)
+
+
+fig.show()
+```
